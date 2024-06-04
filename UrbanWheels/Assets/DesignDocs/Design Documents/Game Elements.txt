@@ -1,0 +1,59 @@
+Drivable Car (Steering, Speed, Turning at Cross Streets): 7
+
+Implementing smooth and responsive car controls can be quite complex, especially when accounting for acceleration and turning physics.
+Obstacles to Dodge: 5
+
+Coding the logic for stationary and moving obstacles involves collision detection and possibly some AI for moving obstacles, but it's less complex than vehicle control.
+Traffic Going Both Ways: 6
+
+Requires AI for other vehicles, including pathfinding and avoiding collisions, which can be moderately complex.
+Directions to Next Pick Up/Destination: 4
+
+Displaying visual indicators is not too complex, but coding the logic to calculate 'X' intersections ahead can be somewhat challenging.
+Time Limit for 'Tips': 3
+
+Timers are relatively straightforward in Unity, but integrating them with the game's economy system adds complexity.
+Selection of Next Passenger(s): 3
+
+Selecting from a list of available passengers is not overly complex, but integrating this with the game's flow adds some complexity.
+Endless Generation of Oncoming Terrain: 8
+
+Procedurally generating terrain that is both endless and varied can be quite complex, requiring advanced algorithms.
+Certain Number of Missions per Day (or Distance Traveled): 4
+
+Tracking missions or distance is straightforward, but the logic to limit and reset daily can add complexity.
+Upgrade or Fix After End of Day: 5
+
+The system itself is not too complex, but connecting it to game progression and economics adds more coding work.
+Passenger Ratings: 4
+
+The concept is simple, but coding a system that rates player performance based on multiple factors can be intricate.
+
+
+If Time Allows:
+
+Traffic Laws: 6
+Enforcing traffic laws and having the AI follow them adds a layer of complexity in terms of game rules and AI behavior.
+
+Voice Directions: 2
+If using pre-made assets, it's just a matter of triggering audio clips at the right time, which is not very complex.
+
+MiniMap: 5
+Creating a minimap involves rendering a second camera view and translating 3D objects to a 2D plane, which can be moderately challenging.
+
+
+Boss Mode 'Karen' Passenger: 7
+This could involve complex AI behavior and unique game events, which would require more coding.
+
+Terrain Become Different Neighborhoods: 7
+Switching between different neighborhoods procedurally can involve a lot of coding to ensure variety and seamless transitions.
+
+Fuel Management: 4
+Requires a system to decrease fuel over time and interact with fuel stations, which is straightforward but needs to be well-integrated with the gameplay.
+
+Finance (Spend Money per Ride, Possible to Lose Money?): 6
+Implementing a financial system that interacts with all aspects of the game (fares, tips, expenses) is relatively complex.
+
+Special Events: 7
+Special events can vary greatly in complexity, but they often involve unique gameplay mechanics and triggers, which can be quite involved. 
+the numeric rating is an estimated relative effort with 10 being the largest estimated work required.

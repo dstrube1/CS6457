@@ -1,0 +1,224 @@
+Steven Deam - sdeam3@gatech.edu
+the_s
+background in c# and .net through working as a software dev on a line of business app for a number of years, and have been playing around with Unity for a few years off and on as a side hobby.  
+
+Jordan Elijah Esposito - jesposito32@gatech.edu
+trippz
+pretty flexible. I have plenty of experience in C# as well as a few other languages, and have dabbled with unity a little
+
+Denver Reed - dreed86@gatech.edu
+ in Charlotte, NC. I too don't have a ton of game making experience, which is one of the reasons I am here! This is my 6th class in OMSCS, experience in Java, Python, and C++, and I work for a major cloud company so I have plenty of infra and scripting experience as well. I have not touched Unity but I am excited to learn.
+
+Sophie Nguyen - snguyen45@gatech.edu
+We shared a class together last semester - CS 6460: Educational Technology - wherein we worked on a team to build a web game app called the Diamant Educational Game (written in Python, https://diamant.pythonanywhere.com/)
+
+VGD - Game Engines - P7
+15 min:
+Display list vs vector graphic
+
+Raster: horizontal line scanned, then moves down one (horizontal retrace) and starts over, then vertical retrace back to top
+
+VSync: vertical sync- fixes stuttering, but at the expense of frame rate
+
+VGD - Game Engines - P8
+9:30:
+Time.deltaTime: measurement of the elapsed time from the previous frame
+if frame rate drops, then deltaTime gets bigger
+
+FixedUpdate varies in how often it gets called
+
+VGD - Game Engines - P9
+6:30: 
+floating point rounding errors can get "bad" - bad?
+
+GO: Game object
+DT: Delta time
+
+Interactive Animation in Video Games
+1:22:50
+Rigging: the process of creating or aligning the abstract animation skeleton within a mesh and then for each bone assigning  vertices and appropriate weighting
+
+1:57:00 IK: Inverse kinematics
+^2:08:00^
+Lerp: linear interpolation
+2:21:00^
+
+M1:
+Assets/AnimatorControllers/SimpleAnimatorController.controller
+changed from 
+m_HasExitTime: 1
+to
+m_HasExitTime: 0
+at lines: 20 & 443
+
+changed from
+m_TransitionDuration: 0.25
+to
+m_TransitionDuration: 0.5
+at lines 17, 772, & 797
+
+changed from 
+m_TransitionDuration: 0.2
+to
+m_TransitionDuration: 0.5
+at lines 343, 368, 418, & 465
+
+changed from
+m_TransitionDuration: 0.15
+to
+m_TransitionDuration: 0.5
+at lines 490 & 515
+
+leftoff in M1 doc:
+Another approach is to add some tweaks to the playback of animations. You will now implement
+
+https://www.youtube.com/watch?v=1yoFjjJRnLY
+Rotation: the act of changing an object's orientation
+
+Qs 4 Prof:
+1- M1 doc: "You may find you need to warp the circular layout to more of a half oval with squished width" - how?
+
+2- https://mediaspace.gatech.edu/media/Unity+Interactive+Animation/1_35msp0bs
+1:25:00 - 1:29:00
+Animation not working - why?
+
+3- "you can adjust animation Mecanim state Transitions via ExitTime, TransitionDuration and other settings"
+
+DOF: degrees of freedom
+
+root motion: X,Y,Z translation, pitch, yaw, roll rotation of the root bone as a component of a skeletal animation
+
+Mecanim - Unity's animation system
+
+Inverse kinematics
+public void SetIKPositionWeight(AvatarIKGoal goal, float value)
+public void SetIKRotationWeight(AvatarIKGoal goal, float value)
+public void SetIKPosition(AvatarIKGoal goal, Vector3 goalPostion)
+public void SetIKRotation(AvatarIKGoal goal, Quaternion goalPostion)
+public void SetLookAtPosition(Vector3 lookAtPosition)
+
+Adobe Mixamo webservice
+
+Physics engines:
+High precision: offline, used for predictions
+Real time: games, bridge builder (polybridge)
+Trials - motorcycle driving
+Trespasser - early physics engine
+Half life 2- gravity gun
+Havok: Used in Half-Life2
+
+hypothetical: multiplayer game with lots of rigidbody collisions: having to calculate lots of stuff flying around, bullets colliding with walls, bullets colliding with enemies- solutions: 
+1- I don't want my own projectiles to hit myself, like if I'm moving fast and can overrun a bullet; capsule collider for player is on a layer that doesn't interact with own bullets
+2- bullets can't hit bullets- layer where objects of the same layer can't each other
+
+restitution: bounciness
+
+Compound colliders: 30m in Video Game Physics Engines
+
+LCP: Linear Complementary Problem, with Jacobian constraints
+
+penalty force - part of the downfall of Trespasser; Skin method is more advanced, maybe generally better
+
+the_s: map design, assets gathering
+david: presentation write up
+sophie: ppt presentation
+denver: video walkthru
+trippz: general scripting and animation
+
+TODO: Hours of availability
+
+M3:
+ReactiveMinion1 position
+0,1,0
+
+ReactiveMinion2 position
+6,1,-14
+
+ReactiveMinion3 position
+-3,1,12
+
+to handle extra files in project:
+delete the Library, check that in, add to gitignore
+or script it
+also ignore Logs & Temp
+
+Game feel:
+Real-time control
+Spatial simulation
+Polish
+
+AI Minion:
+-5,3.3,-8
+
+Waypoint 1:
+-28,1,10
+
+2:
+26,1,14
+
+3:
+15,1,4
+
+4:
+25,1,-17
+
+5: 
+-12,1,4
+
+moving waypoint:
+21,1,-11
+
+WaypointAnimController
+
+(may not need this:
+WaypointScript
+	public Vector3 curVel = new Vector3(0,0,0);
+	public Vector3 prevPos = new Vector3(0,0,0);
+	public Vector3 otherCurVel = new Vector3(0,0,0);
+)
+
+VelocityReporterScript
+	public float smoothingTimeFactor = 0.4f;
+	
+displacement  = velocity * time
+get velocity from VelocityReporterScript
+
+distToMovingWaypoint – someCaptureDistance
+
+normalized vector = direction
+magnitude = distance
+
+A*: g(n) + h(n)
+g(n) ~= Dijkstra
+h(n) ~= greedy-best first
+
+DI: Dependency injection
+DR: Dependency resolver
+
+Listener:
+put start listening in onEnable and stop listening in onDisable
+
+Digital audio, 45:00 - what do these stand for?
+NB
+PRef
+PE
+
+Audio for Games
+1:35:00:
+PCM: Pulse code modulation
+
+Interesting choices:
+1:17:00:
+RTS: Real time strategy
+
+Interactive Narrative - Part I
+6 elements of drama:
+1- thought - ideas and themes being presented
+2- action / plot - events
+3- characters
+4- language - dialog, enunciation, etc
+5- music, including rhythm and flow of language
+6- spectacle- scenery, costumes, special FX
+
+While watching Video Game Design - Volume Partitioning, a thought occurred to me: there's no lesson on the ethics of games. This occurred to me while watching the Quake demo, which didn't bother me, but reminded me that some people have been bothered by some game content in the past. An introductory course into video game design at least acknowledge that and give some educated insight about that? Or is that too advanced?
+
